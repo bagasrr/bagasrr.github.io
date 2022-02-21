@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Poppins:wght@400;600&family=Staatliches&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* Navbar */
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 4em;
+  background-color: #4747d1;
+  font-family: "Poppins", sans-serif;
+}
+nav .profile {
+  height: 3em;
+  border-radius: 50px;
+  animation: 2s;
+}
+nav .profile:hover {
+  cursor: pointer;
+}
+.logo a {
+  color: rgb(226, 226, 226);
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 30px;
+  text-decoration: none;
+}
+.logo a:hover {
+  color: aquamarine;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  list-style-type: none;
+  margin-right: 5px;
+}
+.nav-links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 2px;
+  /* margin-right: 5px; */
+  padding: 10px 15px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+  font-size: 14px;
+}
+
+.nav-links :hover {
+  background: #fff;
+  color: #4747d1;
+  border-radius: 25px;
+  animation: 1s;
+}
+
+/* Body */
+body {
+  background-color: rgb(22, 22, 22);
+  height: 2000px;
+}
+
+.salam {
+  /* width: 70%; */
+  height: 23em;
+  color: rgb(255, 255, 255);
+  font-family: "Baloo Bhaijaan 2", cursive;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.salam::before {
+  content: " ";
+  z-index: -1;
+  margin-top: -3%;
+  display: block;
+  position: absolute;
+  height: 25em;
+  width: 100%;
+  opacity: 60%;
+  background-image: url(images/bg_welcome.jpg);
+  background-size: cover;
+}
+
+.salam h1 {
+  font-size: 150px;
+}
+
+.salam h2 {
+  margin-top: -58px;
+  font-size: 30px;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 500px;
+  background-color: #0d1d3b;
+}
+#profile::before {
+  content: "Profile";
+  margin-top: -350px;
+  position: absolute;
+  font-family: "Staatliches", sans-serif;
+  letter-spacing: 2px;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+}
+#profile img {
+  display: absolute;
+  height: 20em;
+  border-radius: 150px;
+}
+
+#profile .info {
+  font-size: 40px;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+#profile .info blockquote {
+  font-size: 20px;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  font-style: italic;
+  text-transform: uppercase;
+}
+/* hiasan */
+#profile .hiasan,
+#profile .hiasan1 {
+  height: 100px;
+  width: 10px;
+  background-color: whitesmoke;
+  position: relative;
+  opacity: 0.5;
+}
+#profile .hiasan:hover,
+#profile .hiasan1:hover {
+  opacity: 1;
+}
+
+#profile .hiasan {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+#profile .hiasan1 {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* hiasan end */
+
+#skills {
+  text-align: center;
+  padding: 2em 0 4em 0;
+  color: #0d1d3b;
+  background-color: white;
+}
+#skills .judul {
+  font-family: "Staatliches", sans-serif;
+  letter-spacing: 3px;
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+#skills .logos {
+  display: flex;
+  justify-content: space-around;
+}
+.logos img {
+  height: 100px;
+}
+.office,
+.code {
+  display: inline-block;
+}
+
+.office img,
+.code img {
+  margin: 3px;
+  border-radius: 10px;
+}
