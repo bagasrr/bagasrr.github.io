@@ -163,12 +163,17 @@ body {
   color: #0d1d3b;
   background-color: white;
 }
-#skills .judul {
+
+/* Judul SubBAB */
+
+.judul {
   font-family: "Staatliches", sans-serif;
   letter-spacing: 3px;
   font-size: 50px;
   padding-bottom: 20px;
 }
+
+/* Judul SubBAB End */
 #skills .logos {
   display: flex;
   justify-content: space-around;
@@ -186,3 +191,38 @@ body {
   margin: 3px;
   border-radius: 10px;
 }
+
+/* Project start*/
+
+#project {
+  background-color: #0d1d3b;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.prostart {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0 60px;
+}
+
+.project1,
+.project2,
+.project3 {
+  height: 350px;
+  width: 330px;
+  padding: 20px 20px 30px;
+  border-radius: 2em;
+  background-color: white;
+  color: #0d1d3b;
+}
+
+.thumbnail {
+  height: 180px;
+  /* margin: 0 0 20px 0;*/
+  margin-bottom: 10px;
+  border-radius: 2em;
+}
+
+/* Project end */
