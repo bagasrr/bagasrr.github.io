@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Poppins:wght@400;600&family=Staatliches&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -13,6 +19,9 @@ nav {
   height: 4em;
   background-color: #4747d1;
   font-family: "Poppins", sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 nav .profilepic {
   height: 3em;
@@ -71,6 +80,7 @@ body {
   font-family: "Baloo Bhaijaan 2", cursive;
   text-align: center;
   padding-top: 2%;
+  margin-top: 4em;
 }
 
 .salam::before {
@@ -98,7 +108,7 @@ body {
 /* Profile Start */
 
 #profile {
-  height: 500px;
+  height: 100vh;
   background-color: #0d1d3b;
   text-align: center;
   color: white;
@@ -162,6 +172,7 @@ body {
   background-color: #4747d1;
   background-image: url(images/4855443.jpg);
   background-size: cover;
+  max-height: 100vh;
 }
 
 /* Judul SubBAB */
@@ -170,6 +181,7 @@ body {
   font-family: "Staatliches", sans-serif;
   letter-spacing: 3px;
   font-size: 50px;
+  padding-top: 60px;
   padding-bottom: 20px;
   text-align: center;
 }
@@ -199,55 +211,62 @@ body {
 /* skills end */
 
 /* Project start*/
-
+/* My css */
 #project {
+  height: 100vh;
   background-color: #0d1d3b;
-  color: #fff;
-  text-align: center;
-  padding-top: 20px;
+  color: white;
 }
-
-.prostart {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 20px 0 60px;
-  /* border: solid 2px red; */
-}
-
-.project {
-  height: 350px;
-  width: 330px;
-  padding: 20px;
-  border-radius: 2em;
-  background-color: white;
-  color: #0d1d3b;
-}
-.prostart .judulink {
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  color: #0d1d3b;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-.prostart a:hover {
-  color: purple;
-}
-.prostart p {
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  height: 80px;
-  width: 280px;
-  padding: 7px;
+.project-container {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  height: 70vh;
+  padding: 0 10px;
+  background-color: #0d1d3b;
   overflow: auto;
 }
-.thumbnail {
-  height: 180px;
-  margin-bottom: 10px;
-  border-radius: 2em;
+.project-container::-webkit-scrollbar {
+  height: 8px;
 }
-.thumbnail:hover {
-  border-radius: 10px;
+.project-container::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+}
+
+.project-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.project-card {
+  display: inline-block;
+  background-color: white;
+  height: 350px;
+  width: 300px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10 15px 5px 10px black;
+  margin: 0 20px;
+}
+.img-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+}
+.project-name a {
+  text-decoration: none;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  color: grey;
+  transition: 0.3s;
+}
+.project-name a:hover {
+  color: black;
+}
+.project-desc {
+  padding: 5px 20px;
+  overflow: hidden;
+  font-size: 15px;
+  color: grey;
 }
 
 /* Project end */
