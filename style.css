@@ -226,6 +226,7 @@ body {
   background-color: #0d1d3b;
   overflow: auto;
 }
+
 .project-container::-webkit-scrollbar {
   height: 8px;
 }
@@ -263,7 +264,8 @@ body {
   color: black;
 }
 .project-desc {
-  padding: 5px 20px;
+  height: 125px;
+  padding: 10px 20px;
   overflow: hidden;
   font-size: 15px;
   color: grey;
@@ -278,64 +280,57 @@ body {
   padding-bottom: 20px;
   color: white;
 }
-.form {
-  width: 70%;
-  margin: 0 auto;
-  /* border: 2px solid red; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.form .nama,
-.form .pesan {
-  /* border: 2px solid red; */
-  width: 80%;
+.nama,
+.pesan {
+  width: 100%;
   margin: 5px 0;
 }
 
-.nama {
+.nama,
+.pesan {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* margin-right: 18px; */
-  /* padding-right: 35px; */
 }
 .nama .label {
   margin: 8px 0 0 16px;
-  /* border: 2px solid red; */
 }
-.pesan {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
+
 .pesan .label {
   margin-top: 7px;
 }
-.form .inform {
+.inform-nama,
+.inform-pesan {
   margin: 10px;
-  width: 50%;
+  width: 470px;
   padding: 10px;
   border: 0;
   border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: 0.7s;
 }
-#advice button {
+.inform-pesan {
+  height: 100px;
+}
+.inform-pesan:hover,
+.inform-nama:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+.button {
+  display: block;
+  margin: 0 62%;
   cursor: pointer;
-  display: flex;
-  margin: 0 63%;
+  width: 100px;
+  height: 30px;
   padding: 5px;
-  font-family: sans-serif;
-  font-size: 78%;
-  letter-spacing: 1px;
-  color: #0d1d3b;
-  background-color: white;
   border: 0;
-  border-radius: 3px;
+  border-radius: 8px;
+  transition: 0.4s;
 }
-#advice button:hover {
-  color: white;
+.button:hover {
   background-color: #0d1d3b;
+  color: white;
+  box-shadow: 0 15px 8px -13px white;
 }
 /* advice-box End */
 
@@ -408,13 +403,17 @@ footer {
   .judul {
     font-size: 30px;
   }
-
+  #profile {
+    height: 70vh;
+  }
   .container-profile {
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 10%;
   }
   .container-profile img {
-    height: 40vh;
+    height: 20vh;
+    margin-bottom: 20px;
   }
   .container-profile .info {
     margin-top: 10px;
@@ -447,71 +446,27 @@ footer {
   }
   /* Skils End  */
   /* Project Start */
-  .prostart {
-    display: flex;
+
+  #project {
+    height: 85vh;
+  }
+  .project-container {
+    height: 55vh;
+  }
+  .project-card {
+    height: 250px;
+    width: 200px;
+  }
+  .project-name {
+    font-size: 15px;
+  }
+  .project-desc {
+    height: 95px;
     overflow: hidden;
-  }
-  .project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px;
-    height: auto;
-    border-radius: 0;
-    background-color: #1b3b77;
-    color: white;
-    margin: 5px;
-  }
-  .thumbnail {
-    height: 150px;
-    border-radius: 0;
-  }
-  form {
-    width: 70%;
-    margin: 0 auto;
-    /* border: 2px solid red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .form .nama,
-  .form .pesan {
-    /* border: 2px solid red; */
-    width: 80%;
-    margin: 5px 0;
+    font-size: 10px;
   }
 
-  .nama {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /* margin-right: 18px; */
-    /* padding-right: 35px; */
-  }
-  .nama .label {
-    margin: 8px 0 0 16px;
-  }
-  .pesan {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .pesan .label {
-    margin-top: 7px;
-    width: auto;
-    text-align: end;
-  }
-  .form .inform {
-    margin: 10px;
-    width: 80%;
-    padding: 10px;
-    border: 0;
-    border-radius: 2px;
-  }
-  #advice button {
-    margin: 0 50%;
-  }
+  /* Project end */
 }
 
 /* End responsive CSS */
