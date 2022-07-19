@@ -352,9 +352,6 @@ footer h3 {
 /* Mobile */
 @media only screen and (max-width: 600px) {
   /* Navbar Start */
-  body {
-    overflow-x: hidden;
-  }
   .nav-links,
   .profilepic {
     display: none;
@@ -477,10 +474,10 @@ footer h3 {
     width: 250px;
   }
 
-  #advice {
-    overflow-x: hidden;
-  }
   /* advice end */
+  footer h1 {
+    margin-right: 15px;
+  }
 }
 
 /* End responsive CSS */
