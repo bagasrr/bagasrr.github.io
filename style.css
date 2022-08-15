@@ -10,9 +10,9 @@ html::-webkit-scrollbar {
   padding: 0px;
   box-sizing: border-box;
 }
-body {
+/* body {
   overflow-x: hidden;
-}
+} */
 /* Navbar */
 
 nav {
@@ -74,9 +74,6 @@ nav .profilepic:hover {
 }
 /* nav end */
 
-body {
-  background-color: rgb(49, 49, 49);
-}
 .salam {
   /* width: 70%; */
   height: 23em;
@@ -235,7 +232,7 @@ body {
   height: 8px;
 }
 .project-container::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 15px;
 }
 
