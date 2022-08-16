@@ -13,6 +13,8 @@ if (pcLength == 1) {
   projectContainer.style.justifyContent = "center";
 } else if (pcLength < 3) {
   projectContainer.style.justifyContent = "space-evenly";
+} else {
+  projectContainer.style.justifyContent = "";
 }
 
 //projectCount
@@ -20,16 +22,15 @@ const minus = document.querySelector(".minus"),
   num = document.querySelector(".num"),
   plus = document.querySelector(".plus");
 
-let pCount = pcLength;
+let pCount = pcLength < 10 ? "0" + pcLength : pcLength;
+num.innerText = pCount;
 
 // buat num sama dengan jumlah project
-pCount = pCount < 10 ? "0" + pCount : pCount;
-num.innerText = pCount;
-console.log(pCount);
 
 // baut listener kalo ditambah project nambah 1 dan sebaliknya
 
 plus.addEventListener("click", () => {
+  pcLength++;
   const newProjectCard = document.createElement("li");
   newProjectCard.className = "project-card";
 
@@ -43,7 +44,7 @@ plus.addEventListener("click", () => {
   const newProjectName = document.createElement("h2");
   newProjectName.className = "project-name";
   const newLink = document.createElement("a");
-  let newTextProjectName = document.createTextNode("Project Name");
+  let newTextProjectName = document.createTextNode("Project ke " + pcLength);
   newLink.appendChild(newTextProjectName);
   newProjectName.appendChild(newLink);
   console.log(newProjectName);
@@ -68,7 +69,7 @@ plus.addEventListener("click", () => {
 
   // itemBaru.appendChild(isiItem);
   // itemContainer.appendChild(itemBaru);
-  console.log(pCount);
+  console.log(pcLength);
   pCount++;
   pCount = pCount < 10 ? "0" + pCount : pCount;
   num.innerText = pCount;
@@ -76,8 +77,10 @@ plus.addEventListener("click", () => {
 
 minus.addEventListener("click", () => {
   if (pCount > 0) {
-    const projectCard1 = (document.querySelector = ".project-card");
-    projectContainer.removeChild(projectCard1);
+    const projectCard = document.querySelector(".project-card");
+    projectContainer.removeChild(projectContainer.lastElementChild);
+    pcLength--;
+    console.log(pcLength);
 
     pCount--;
     pCount = pCount < 10 ? "0" + pCount : pCount;
