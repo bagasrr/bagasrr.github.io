@@ -10,46 +10,42 @@ html::-webkit-scrollbar {
   padding: 0px;
   box-sizing: border-box;
 }
-/* body {
-  overflow-x: hidden;
-} */
 /* Navbar */
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 4em;
   background-color: #4747d1;
   font-family: "Poppins", sans-serif;
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100%;
 }
-nav .profilepic {
-  height: 3em;
-  border-radius: 50px;
-  animation: 2s;
-}
-nav .profilepic:hover {
-  cursor: pointer;
-}
 .logo a {
   color: rgb(226, 226, 226);
-  text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   letter-spacing: 3px;
   font-weight: 600;
   font-size: 30px;
   text-decoration: none;
+  margin-left: 150px;
 }
 .logo a:hover {
   color: #0d1d3b;
 }
+.menu {
+  display: inline-flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-right: 80px;
+}
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 20%;
   list-style-type: none;
   margin-right: 5px;
 }
@@ -59,7 +55,7 @@ nav .profilepic:hover {
   letter-spacing: 2px;
   padding: 10px 15px;
   font-size: 17px;
-  transition: 0.7s;
+  transition: 0.4s;
 }
 
 .nav-links a:hover {
@@ -67,6 +63,21 @@ nav .profilepic:hover {
   color: #4747d1;
   border-radius: 25px;
   animation: 1s;
+}
+.user {
+  display: inline-flex;
+  align-items: center;
+}
+.userPic {
+  height: 3em;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.username {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 3px;
+  cursor: pointer;
 }
 
 .burger {
@@ -378,26 +389,70 @@ footer h3 {
 /* Mobile */
 @media only screen and (max-width: 600px) {
   /* Navbar Start */
-  /* .nav-links,
-  .profilepic {
-    display: none;
-  } */
-
+  nav {
+    position: fixed;
+    background: #4747d1;
+    z-index: 1;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  .menuWidth {
+    width: 200px;
+  }
+  .nav-links {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .nav-links a {
+    display: block;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    color: #4747d1;
+  }
+  .userPic {
+    margin: 5px;
+  }
   .burger {
-    display: inline-block;
-    cursor: pointer;
+    display: flex;
+    width: 50px;
+    height: auto;
+    align-items: flex-end;
+    flex-direction: column;
   }
 
   .bar1,
-  .bar2,
   .bar3 {
     width: 30px;
     height: 4px;
     background-color: white;
-    margin: 6px 0;
+    border-radius: 2px;
+    margin: 3px 0;
     transition: 0.4s;
   }
-
+  .bar2 {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
   .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
     transform: rotate(-45deg) translate(-6px, 6px);

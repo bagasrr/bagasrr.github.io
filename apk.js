@@ -2,6 +2,8 @@ const burgerIcon = document.querySelector(".burger");
 
 burgerIcon.addEventListener("click", function () {
   burgerIcon.classList.toggle("change");
+  document.querySelector(".menu").classList.toggle("menuWidth");
+  // document.querySelector(".menu").style.width = "200px";
 });
 
 //membuat project-card responsive
