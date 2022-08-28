@@ -1,5 +1,11 @@
 const burgerIcon = document.querySelector(".burger");
 
+// function removeToggle() {
+//   document.body.addEventListener("click", function () {
+//     document.querySelector(".menu").classList.remove("menuWidth");
+//   });
+// }
+
 burgerIcon.addEventListener("click", function () {
   burgerIcon.classList.toggle("change");
   document.querySelector(".menu").classList.toggle("menuWidth");
@@ -11,23 +17,25 @@ burgerIcon.addEventListener("click", function () {
 const projectContainer = document.querySelector(".project-container"),
   projectCard = projectContainer.getElementsByClassName("project-card");
 let pcLength = projectCard.length;
-if (pcLength == 1) {
-  projectContainer.style.justifyContent = "center";
-} else if (pcLength < 3) {
-  projectContainer.style.justifyContent = "space-evenly";
-} else {
-  projectContainer.style.justifyContent = "";
-}
 
+function projectJustify() {
+  if (pcLength == 1) {
+    projectContainer.style.justifyContent = "center";
+  } else if (pcLength < 3) {
+    projectContainer.style.justifyContent = "space-evenly";
+  } else {
+    projectContainer.style.justifyContent = "";
+  }
+}
+projectJustify();
 //projectCount
 const minus = document.querySelector(".minus"),
   num = document.querySelector(".num"),
   plus = document.querySelector(".plus");
 
+// buat num sama dengan jumlah project
 let pCount = pcLength < 10 ? "0" + pcLength : pcLength;
 num.innerText = pCount;
-
-// buat num sama dengan jumlah project
 
 // baut listener kalo ditambah project nambah 1 dan sebaliknya
 
@@ -75,6 +83,8 @@ plus.addEventListener("click", () => {
   pCount++;
   pCount = pCount < 10 ? "0" + pCount : pCount;
   num.innerText = pCount;
+
+  projectJustify();
 });
 
 minus.addEventListener("click", () => {
@@ -88,7 +98,10 @@ minus.addEventListener("click", () => {
     pCount = pCount < 10 ? "0" + pCount : pCount;
     num.innerText = pCount;
   }
+  projectJustify();
 });
+
+projectJustify();
 
 //adivice
 
