@@ -200,9 +200,13 @@ nav {
 }
 
 /* Judul SubBAB End */
+
 #skills .logos {
   display: flex;
   justify-content: space-around;
+}
+.logos {
+  padding-bottom: 50px;
 }
 .logos img {
   height: 100px;

@@ -1,15 +1,8 @@
 const burgerIcon = document.querySelector(".burger");
 
-// function removeToggle() {
-//   document.body.addEventListener("click", function () {
-//     document.querySelector(".menu").classList.remove("menuWidth");
-//   });
-// }
-
 burgerIcon.addEventListener("click", function () {
   burgerIcon.classList.toggle("change");
   document.querySelector(".menu").classList.toggle("menuWidth");
-  // document.querySelector(".menu").style.width = "200px";
 });
 
 //membuat project-card responsive
@@ -25,9 +18,11 @@ function projectJustify() {
     projectContainer.style.justifyContent = "space-evenly";
   } else {
     projectContainer.style.justifyContent = "";
+    projectContainer.syle.overflow = "auto";
   }
 }
 projectJustify();
+
 //projectCount
 const minus = document.querySelector(".minus"),
   num = document.querySelector(".num"),
@@ -37,8 +32,12 @@ const minus = document.querySelector(".minus"),
 let pCount = pcLength < 10 ? "0" + pcLength : pcLength;
 num.innerText = pCount;
 
-// baut listener kalo ditambah project nambah 1 dan sebaliknya
+const counter = () => {
+  pCount = pCount < 10 ? "0" + pCount : pCount;
+  num.innerText = pCount;
+};
 
+// buat listener kalo ditambah project nambah 1 dan sebaliknya
 plus.addEventListener("click", () => {
   pcLength++;
   const newProjectCard = document.createElement("li");
@@ -57,7 +56,6 @@ plus.addEventListener("click", () => {
   let newTextProjectName = document.createTextNode("Project ke " + pcLength);
   newLink.appendChild(newTextProjectName);
   newProjectName.appendChild(newLink);
-  console.log(newProjectName);
 
   const newProjectDesc = document.createElement("p");
   newProjectDesc.className = "project-desc";
@@ -66,24 +64,16 @@ plus.addEventListener("click", () => {
   );
   newProjectDesc.appendChild(newTextProjectDesc);
 
-  // memasukkan child ke parent project info
   newProjectInfo.appendChild(newProjectName);
   newProjectInfo.appendChild(newProjectDesc);
 
-  // memasukkan parent (project info) ke parent Project Card
   newProjectCard.appendChild(newThumb);
   newProjectCard.appendChild(newProjectInfo);
 
-  // memasukkan project card ke project container
   projectContainer.appendChild(newProjectCard);
 
-  // itemBaru.appendChild(isiItem);
-  // itemContainer.appendChild(itemBaru);
-  console.log(pcLength);
   pCount++;
-  pCount = pCount < 10 ? "0" + pCount : pCount;
-  num.innerText = pCount;
-
+  counter();
   projectJustify();
 });
 
@@ -95,16 +85,13 @@ minus.addEventListener("click", () => {
     console.log(pcLength);
 
     pCount--;
-    pCount = pCount < 10 ? "0" + pCount : pCount;
-    num.innerText = pCount;
+    counter();
   }
   projectJustify();
 });
-
 projectJustify();
 
 //adivice
-
 const textArea = document.getElementById("advice");
 
 textArea.addEventListener(
