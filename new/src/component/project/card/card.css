@@ -1,0 +1,78 @@
+.card {
+  position: relative;
+  margin: 0 20px;
+  width: 200px;
+  height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  border-radius: var(--card-border-radius);
+  color: black;
+  transition: 0.3s;
+  scroll-snap-align: center;
+  background: white;
+}
+.card:first-child {
+  margin-left: 50px;
+}
+.card:last-child {
+  margin-right: 50px;
+}
+.card:hover {
+  scale: 1.15;
+  box-shadow: 0 0 15px 3px lightblue;
+  cursor: pointer;
+  /* background: blue; */
+}
+
+.thumbnail {
+  /* background: blue; */
+  position: relative;
+  height: 45%;
+  width: 100%;
+  background-size: cover;
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+}
+.card::after {
+  content: "C";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: white;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  overflow: hidden;
+  transition-delay: 2s;
+  transition: width 0.3s, top 0.3s 0.5s;
+}
+.card:hover::after {
+  content: "Category";
+  width: 50px;
+  top: 36%;
+  transition-delay: 0s;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+}
+.card-desc {
+  position: relative;
+  text-align: center;
+  width: 90%;
+  height: 40%;
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 11px;
+  overflow: hidden;
+  color: rgba(92, 91, 91, 0.7);
+}
